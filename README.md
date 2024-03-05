@@ -4,6 +4,7 @@ A sustainable recycling collection app based on the rag-and-bone industry
 
 
 ### **Application Properties**
+##### Copy pasta this into your **application.properties** under resource
 
 ```
 spring.datasource.url=jdbc:mysql://localhost:3306/dip
