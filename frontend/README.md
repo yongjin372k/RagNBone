@@ -1,4 +1,4 @@
-# frontend
+# rag_and_bone
 
 A new Flutter project.
 

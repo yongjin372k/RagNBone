@@ -1,6 +1,6 @@
 {
-    "name": "frontend",
-    "short_name": "frontend",
+    "name": "rag_and_bone",
+    "short_name": "rag_and_bone",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
