@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS BOOKING (
     userID INT NOT NULL,
     address VARCHAR(255) NOT NULL,
     postalCode VARCHAR(6) NOT NULL,
+    adhoc BOOLEAN,
     bookingDate DATE
 );
 
