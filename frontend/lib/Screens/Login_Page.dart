@@ -1,114 +1,219 @@
 import 'package:flutter/material.dart';
-import 'package:rag_and_bone/Screens/RegisterPage.dart';
 
-class LoginPage extends StatefulWidget {
-  @override
-  _LoginPageState createState() => _LoginPageState();
+void main() {
+  runApp(MyApp());
 }
 
-class _LoginPageState extends State<LoginPage> {
-  bool _isMerchant = false; // Initialize as a customer
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: LoginPage(),
+      ),
+    );
+  }
+}
 
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Login'),
-        backgroundColor: const Color.fromARGB(255, 5, 47, 7),
-      ),
-      body: ListView(
-        padding: EdgeInsets.all(20.0),
-        children: [
-          Text(
-            'Welcome!',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
+      body: Center(
+        child: Container(
+          width: 430,
+          height: 932,
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(255, 245, 238, 1),
           ),
-          SizedBox(height: 20),
-          TextField(
-            // ... Existing username field
-            style: TextStyle(fontSize: 18),
-            decoration: InputDecoration(
-              labelText: 'Username',
-              contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-              // ... any other decoration properties you want to add
-            ),
-          ),
-          SizedBox(height: 10),
-          TextField(
-            // ... Existing password field
-            style: TextStyle(fontSize: 18),
-            decoration: InputDecoration(
-              labelText: 'Password',
-              contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-              // ... any other decoration properties you want to add
-            ),
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: TextButton(
-              onPressed: () {
-                // Implement forgot password functionality
-              },
-              child: Text('Forgot Password?'),
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              // Implement login functionality
-            },
-            child: Text('Login'),
-            style: ElevatedButton.styleFrom(
-              primary: Colors.green,
-              padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              textStyle: TextStyle(fontSize: 18),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                top: 368,
+                left: 61,
+                child: Container(
+                  width: 308,
+                  height: 54,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromRGBO(0, 0, 0, 0.25),
+                        offset: Offset(0, 4),
+                        blurRadius: 4,
+                      )
+                    ],
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.black,
+                    ),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Phone Number',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 171, 162, 162),
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Already Have an Account?'),
-              TextButton(
-                onPressed: () {
-                  // Navigate to the RegisterPage when Sign Up is pressed
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => RegisterPage()),
-                  );
-                },
+              Positioned(
+                top: 435,
+                left: 61,
+                child: Container(
+                  width: 308,
+                  height: 54,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromRGBO(0, 0, 0, 0.25),
+                        offset: Offset(0, 4),
+                        blurRadius: 4,
+                      )
+                    ],
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.black,
+                    ),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Password',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 171, 162, 162),
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 0,
+                left: 0,
+                child: Container(
+                  width: 430,
+                  height: 47,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 84,
+                left: 80,
+                child: Container(
+                  width: 269,
+                  height: 117,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/Karanggunilogo.png'),
+                      fit: BoxFit.fitWidth,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 277,
+                left: 0,
+                right: 0,
                 child: Text(
-                  'Sign Up',
-                  style: TextStyle(color: Colors.green),
+                  'Welcome back!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color.fromRGBO(0, 0, 0, 1),
+                    fontFamily: 'Istok Web',
+                    fontSize: 24,
+                    letterSpacing: 0,
+                    fontWeight: FontWeight.normal,
+                    height: 1,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 498,
+                left: 20,
+                right: 0,
+                child: Text(
+                  'Forgot your password?',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color.fromRGBO(0, 0, 0, 1),
+                    fontFamily: 'Istok Web',
+                    fontSize: 15,
+                    letterSpacing: 0,
+                    fontWeight: FontWeight.normal,
+                    height: 1,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 609,
+                left: 24,
+                right: 24,
+                child: Text(
+                  'Don’t have an account yet? Sign up now!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color.fromRGBO(0, 0, 0, 1),
+                    fontFamily: 'Istok Web',
+                    fontSize: 15,
+                    letterSpacing: 0,
+                    fontWeight: FontWeight.normal,
+                    height: 1,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 538,
+                left: 24,
+                child: Container(
+                  width: 381,
+                  height: 60,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        top: 0,
+                        left: 0,
+                        child: Container(
+                          width: 381,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Color.fromRGBO(167, 17, 113, 1),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 15,
+                        left: 0,
+                        right: 0,
+                        child: Text(
+                          'Log In',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color.fromRGBO(255, 255, 255, 1),
+                            fontFamily: 'Istok Web',
+                            fontSize: 24,
+                            letterSpacing: 0,
+                            fontWeight: FontWeight.normal,
+                            height: 1,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Role:', style: TextStyle(fontSize: 18)),
-              SizedBox(width: 10),
-              Switch(
-                value: _isMerchant,
-                onChanged: (newValue) {
-                  setState(() {
-                    _isMerchant = newValue;
-                  });
-                },
-                activeColor: Colors.green,
-                activeTrackColor: Colors.lightGreenAccent,
-              ),
-              Text(_isMerchant ? 'Merchant' : 'Customer', style: TextStyle(fontSize: 18)),
-            ],
-          ),
-        ],
+        ),
       ),
     );
   }

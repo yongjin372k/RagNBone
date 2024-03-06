@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rag_and_bone/Screens/Login_Page.dart';
+import 'package:rag_and_bone/Screens/greetingPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const MyHomePage(title: 'Rag & Bone'),
-      home: LoginPage(),
+      // home: LoginPage(),
     );
   }
 }
