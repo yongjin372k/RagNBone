@@ -1,5 +1,10 @@
-package com.ragnbone.Server.api.repository;
+package com.ragnbone.server.api.repository;
 
-public class LocationRepository {
+import com.ragnbone.server.models.Location;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class LocationRepository extends JpaRepository<Location, Long> {
     
 }

@@ -38,7 +38,7 @@ public class Location {
         int userID,
         double latitude,
         double longitude,
-        LocalDateTime date
+        LocalDateTime timestamp
     ) {
         this.logID = logID;
         this.userID = userID;
