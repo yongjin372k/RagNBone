@@ -1,4 +1,4 @@
-package com.ragnbone.server.models;
+package com.ragnbone.Server.models;
 
 import jakarta.persistence.*;
 import lombok.Data;

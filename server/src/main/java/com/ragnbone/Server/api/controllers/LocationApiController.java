@@ -1,4 +1,4 @@
-package com.ragnbone.server.api.controllers;
+package com.ragnbone.Server.api.controllers;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ragnbone.server.api.repository.LocationRepository;
-import com.ragnbone.server.api.service.LocationService;
-import com.ragnbone.server.models.Location;
+import com.ragnbone.Server.api.repository.LocationRepository;
+import com.ragnbone.Server.api.service.LocationService;
+import com.ragnbone.Server.models.Location;
 
 @RestController
 @RequestMapping("/api/v1/location")

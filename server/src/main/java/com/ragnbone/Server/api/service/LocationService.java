@@ -1,12 +1,12 @@
-package com.ragnbone.server.api.service;
-
-import com.ragnbone.server.api.repository.LocationRepository;
-import com.ragnbone.server.models.Location;
+package com.ragnbone.Server.api.service;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.ragnbone.Server.api.repository.LocationRepository;
+import com.ragnbone.Server.models.Location;
 
 
 @Service
