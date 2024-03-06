@@ -96,4 +96,26 @@ public class Booking {
         this.bookingDate = bookingDate;
     }
 
+    @Override
+    public String toString() {
+      return "Booking{"
+          + "bookingID="
+          + bookingID
+          + ", userID'"
+          + userID
+          + '\''
+          + ", address='"
+          + address
+          + '\''
+          + ", postalCode='"
+          + postalCode
+          + '\''
+          + ", adhoc='"
+          + adhoc
+          + '\''
+          + ", bookingDate='"
+          + bookingDate
+          + '\''
+          + '}';
+    }
 }
