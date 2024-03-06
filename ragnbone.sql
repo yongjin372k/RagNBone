@@ -5,16 +5,6 @@ CREATE DATABASE IF NOT EXISTS ragnbone;
 -- Use the 'ragnbone' database
 USE ragnbone;
 
--- Create the USER table
-CREATE TABLE IF NOT EXISTS USER (
-    userID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    fullname VARCHAR(50),
-    phone VARCHAR(20) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    roleID INT NOT NULL DEFAULT 0,
-    FOREIGN KEY (roleID) REFERENCES ROLES(ID)
-);
-
 -- Create the ROLES table
 CREATE TABLE IF NOT EXISTS ROLES (
     ID INT NOT NULL PRIMARY KEY,
@@ -27,13 +17,23 @@ VALUES
     (0, 'User'),
     (1, 'KarangGuni');
 
+-- Create the USER table
+CREATE TABLE IF NOT EXISTS USER (
+    userID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fullname VARCHAR(50),
+    phone VARCHAR(20) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    roleID INT NOT NULL DEFAULT 0,
+    FOREIGN KEY (roleID) REFERENCES ROLES(ID)
+);
+
 -- Create the LOCATION table
 CREATE TABLE IF NOT EXISTS LOCATION (
     logID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     userID INT,
     latitude DOUBLE,
-    longtitude DOUBLE,
-    timestamp DATETIME,
+    longitude DOUBLE,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (userID) REFERENCES USER(userID)
 );
 

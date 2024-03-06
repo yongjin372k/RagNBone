@@ -1,9 +1,5 @@
 package com.ragnbone.server.models;
 
-import java.time.LocalDateTime;
-
-import org.springframework.stereotype.Indexed;
-
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,8 +10,6 @@ public class Location {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "logID")
-    private int logID;
 
     @Column(name = "userID")
     private int userID;
@@ -26,33 +20,18 @@ public class Location {
     @Column(name = "longitude")
     private double longitude;
 
-    @Column(name = "timestamp")
-    private LocalDateTime timestamp;
-
     public Location() {
         // Default Constructor
     }
 
     public Location(
-        int logID,
         int userID,
         double latitude,
-        double longitude,
-        LocalDateTime timestamp
+        double longitude
     ) {
-        this.logID = logID;
         this.userID = userID;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.timestamp = timestamp;
-    }
-
-    public int getLogID() {
-        return logID;
-    }
-
-    public void setLogID(int logID) {
-        this.logID = logID;
     }
 
     public int getUserID() {
@@ -79,19 +58,9 @@ public class Location {
         this.longitude = longitude;
     }
 
-    public LocalDateTime getTimeStamp() {
-        return timestamp;
-    }
-
-    public void setTimeStamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
-    }
-
     @Override
   public String toString() {
     return "Location{"
-        + "logID="
-        + logID
         + ", userID'"
         + userID
         + '\''
@@ -100,9 +69,6 @@ public class Location {
         + '\''
         + ", longtitude='"
         + longitude
-        + '\''
-        + ", timestamp='"
-        + timestamp
         + '\''
         + '}';
   }
