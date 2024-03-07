@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS BOOKING (
     postalCode VARCHAR(6) NOT NULL,
     adhoc BOOLEAN,
     bookingDate DATE,
-    paymentType ENUM('CASH', 'DONATE'),
+    paymentType BOOLEAN, -- 1 MEANS CASH PAYMENT, 0 MEANS DONATION
     pickupTime TIME
 );
 
