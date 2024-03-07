@@ -295,7 +295,7 @@ class donorHomePage extends StatelessWidget {
                 // // You can navigate to another screen, show a dialog, etc.
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  MaterialPageRoute(builder: (context) => MapSample()),
                 );
               },
               child: Container(
