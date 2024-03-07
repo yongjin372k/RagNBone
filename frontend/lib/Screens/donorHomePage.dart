@@ -36,7 +36,7 @@ class donorHomePage extends StatelessWidget {
                 width: 430,
                 height: 340,
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(19, 98, 7, 1),
+                  color: Color.fromARGB(255, 159, 17, 107),
                 ),
               ),
             ),
@@ -69,7 +69,7 @@ class donorHomePage extends StatelessWidget {
               top: 140,
               left: 23,
               child: Text(
-                'Good Morning, Eliza!',
+                'Good Morning, Ewan!',
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   color: Color.fromRGBO(0, 0, 0, 1),
@@ -99,7 +99,7 @@ class donorHomePage extends StatelessWidget {
             ),
             Positioned(
               top: 230,
-              left: 250,
+              left: 240,
               child: Container(
                 width: 140,
                 height: 74,
@@ -149,7 +149,7 @@ class donorHomePage extends StatelessWidget {
               left: 15,
               child: Container(
                 width: 215,
-                height: 200,
+                height: 310,
                 child: Stack(
                   children: <Widget>[
                     Positioned(
@@ -157,7 +157,7 @@ class donorHomePage extends StatelessWidget {
                       left: 0,
                       child: Container(
                         width: 215,
-                        height: 200,
+                        height: 310,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(19),
                           boxShadow: [
@@ -175,7 +175,7 @@ class donorHomePage extends StatelessWidget {
                       top: 14.06,
                       left: 17,
                       child: Text(
-                        'Create Booking',
+                        'View Booking',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -191,7 +191,7 @@ class donorHomePage extends StatelessWidget {
                       top: 45,
                       left: 17,
                       child: Text(
-                        'Book before 4pm\nfor next day pick up',
+                        'Accept Bookings here',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -204,7 +204,7 @@ class donorHomePage extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      top: 65,
+                      top: 160,
                       left: 65,
                       child: Container(
                         width: 167,
@@ -222,72 +222,10 @@ class donorHomePage extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
-              top: 450,
-              left: 15,
-              child: Container(
-                width: 215,
-                height: 90,
-                child: Stack(
-                  children: <Widget>[
-                    Positioned(
-                      top: 0,
-                      left: 0,
-                      child: Container(
-                        width: 215,
-                        height: 90,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(19),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color.fromRGBO(0, 0, 0, 0.25),
-                              offset: Offset(0, 4),
-                              blurRadius: 4,
-                            )
-                          ],
-                          color: Color.fromRGBO(255, 245, 238, 1),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      top: 16,
-                      left: 17,
-                      child: Text(
-                        'Urgent Collection',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: Color.fromRGBO(0, 0, 0, 1),
-                          fontFamily: 'Istok Web',
-                          fontSize: 22,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.bold,
-                          height: 1,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      top: 55,
-                      left: 17,
-                      child: Text(
-                        '\$1.99 pick up fee',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: Color.fromRGBO(0, 0, 0, 1),
-                          fontFamily: 'Istok Web',
-                          fontSize: 14,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.normal,
-                          height: 1,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            
             Positioned(
               top: 300,
-              left: 250,
+              left: 240,
               child: GestureDetector(
               onTap: () {
                 // // Add your desired functionality here
@@ -308,7 +246,7 @@ class donorHomePage extends StatelessWidget {
                       left: 0,
                       child: Container(
                         width: 140,
-                        height: 240,
+                        height: 160,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(19),
                           boxShadow: [
@@ -326,7 +264,7 @@ class donorHomePage extends StatelessWidget {
                       top: 12.36,
                       left: 11,
                       child: Text(
-                        'Track\nKarang\nGuni Live',
+                        '\nUrgent \nPick Up \nNearby',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -338,22 +276,66 @@ class donorHomePage extends StatelessWidget {
                         ),
                       ),
                     ),
+                    
+                  ],
+                ),
+              ),
+              ),
+            ),
+            Positioned(
+              top: 480,
+              left: 240,
+              child: GestureDetector(
+              onTap: () {
+                // // Add your desired functionality here
+                // print('Track Karang Guni Live button tapped!');
+                // // You can navigate to another screen, show a dialog, etc.
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MapSample()),
+                );
+              },
+              child: Container(
+                width: 140,
+                height: 60,
+                child: Stack(
+                  children: <Widget>[
                     Positioned(
-                      top: 100,
-                      left: 11,
+                      top: 0,
+                      left: 0,
+                      child: Container(
+                        width: 140,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(19),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromRGBO(0, 0, 0, 0.25),
+                              offset: Offset(0, 4),
+                              blurRadius: 4,
+                            )
+                          ],
+                          color: Color.fromRGBO(255, 245, 238, 1),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 20,
+                      left: 13,
                       child: Text(
-                        'Reach a\nKarang Guni now',
-                        textAlign: TextAlign.left,
+                        'Learn more!',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color.fromRGBO(0, 0, 0, 1),
                           fontFamily: 'Istok Web',
-                          fontSize: 14,
+                          fontSize: 20,
                           letterSpacing: 0,
-                          fontWeight: FontWeight.normal,
+                          fontWeight: FontWeight.bold,
                           height: 1,
                         ),
                       ),
                     ),
+                    
                   ],
                 ),
               ),
