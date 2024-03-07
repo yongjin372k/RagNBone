@@ -333,13 +333,13 @@ class _MyAppState extends State<MapSample> {
                   mainAxisSize: MainAxisSize.min, // To make the column wrap its content
                   children: [
                     Text(
-                      "Wish to speak to a Karang Guni?",
-                      style: TextStyle(fontSize: 12),
+                      "Wish to speak to Donor/Seller?",
+                      style: TextStyle(fontSize: 14),
                     ),
                     SizedBox(height: 6), // Adjust spacing based on your design
                     Text(
-                      "Message a Karang Guni now!",
-                      style: TextStyle(fontSize: 18),
+                      "Message now!",
+                      style: TextStyle(fontSize: 20),
                     ),
                   ],
                 ),
