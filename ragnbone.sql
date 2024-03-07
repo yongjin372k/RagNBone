@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS BOOKING (
     address VARCHAR(255) NOT NULL,
     postalCode VARCHAR(6) NOT NULL,
     adhoc BOOLEAN,
-    bookingDate DATE
+    bookingDate DATE,
     paymentType ENUM('CASH', 'DONATE'),
     pickupTime TIME
 );
