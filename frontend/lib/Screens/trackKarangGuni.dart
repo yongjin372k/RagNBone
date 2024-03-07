@@ -159,6 +159,13 @@ class _MyAppState extends State<MapSample> {
       setState(() {
         currentLocation = position;
       });
+      if (currentLocation != null) {
+      currentLocationMarker = Marker(
+        markerId: MarkerId("currentLocation"),
+        position: LatLng(currentLocation!.latitude, currentLocation!.longitude),
+      );
+      markers.add(currentLocationMarker!);
+    }
     } catch (e) {
       print("Error getting location: $e");
     }
