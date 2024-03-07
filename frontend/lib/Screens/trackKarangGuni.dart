@@ -232,38 +232,109 @@ class _MyAppState extends State<MapSample> {
     });
   }
 
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     home: Scaffold(
+  //       appBar: AppBar(
+  //         title: const Text('Rag & Bone'),
+  //         backgroundColor: Colors.green[700],
+  //       ),
+  //       body: currentLocation == null
+  //           ? const Center(child: Text("Loading"))
+  //           : GoogleMap(
+  //               onMapCreated: _onMapCreated,
+  //               initialCameraPosition: CameraPosition(
+  //                 target: LatLng(currentLocation!.latitude, currentLocation!.longitude),
+  //                 zoom: 15.0,
+  //               ),
+  //               markers: markers,
+                
+  //               // markers: {
+  //               // Marker(
+  //               //    markerId: MarkerId("currentLocation"),
+  //               //   position: LatLng(currentLocation!.latitude, currentLocation!.longitude),
+  //               // ),
+  //               // //   // Marker(
+  //               // //   //   markerId: MarkerId("source"),
+  //               // //   //   position: _center,
+  //               // //   // ),
+  //               // //   // Marker(
+  //               // //   //   markerId: MarkerId("destination"),
+  //               // //   //   position: destination,
+  //               // //   // ),
+  //               //  },
+  //             ),
+  //     ),
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Rag & Bone'),
-          backgroundColor: Colors.green[700],
-        ),
-        body: currentLocation == null
-            ? const Center(child: Text("Loading"))
-            : GoogleMap(
-                onMapCreated: _onMapCreated,
-                initialCameraPosition: CameraPosition(
-                  target: LatLng(currentLocation!.latitude, currentLocation!.longitude),
-                  zoom: 15.0,
+    return Scaffold(
+      body: Stack(
+        children: [
+          currentLocation == null
+              ? Center(child: CircularProgressIndicator())
+              : GoogleMap(
+                  onMapCreated: _onMapCreated,
+                  initialCameraPosition: CameraPosition(
+                    target: LatLng(currentLocation!.latitude, currentLocation!.longitude),
+                    zoom: 15.0,
+                  ),
+                  markers: markers,
                 ),
-                markers: markers,
-                // markers: {
-                // Marker(
-                //    markerId: MarkerId("currentLocation"),
-                //   position: LatLng(currentLocation!.latitude, currentLocation!.longitude),
-                // ),
-                // //   // Marker(
-                // //   //   markerId: MarkerId("source"),
-                // //   //   position: _center,
-                // //   // ),
-                // //   // Marker(
-                // //   //   markerId: MarkerId("destination"),
-                // //   //   position: destination,
-                // //   // ),
-                //  },
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 254, 254, 242), // Lighter hue
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.2),
+                    spreadRadius: 0,
+                    blurRadius: 10,
+                    offset: Offset(0, -2),
+                  ),
+                ],
               ),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16), // Adjust padding
+              height: 100, // Adjust height
+              child: ElevatedButton(
+                onPressed: () {
+                  // Your action here
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: const Color.fromARGB(255, 27, 75, 28), // Button background color
+                  onPrimary: Colors.white, // Text color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20), // Adjust radius here
+                  ),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min, // To make the column wrap its content
+                  children: [
+                    Text(
+                      "Wish to speak to a Karang Guni?",
+                      style: TextStyle(fontSize: 12),
+                    ),
+                    SizedBox(height: 6), // Adjust spacing based on your design
+                    Text(
+                      "Message a Karang Guni now!",
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
