@@ -1,4 +1,3 @@
-
 // import 'dart:async';
 
 // import 'package:flutter/material.dart';
@@ -159,6 +158,7 @@ class _MyAppState extends State<MapSample> {
       setState(() {
         currentLocation = position;
       });
+
       if (currentLocation != null) {
       currentLocationMarker = Marker(
         markerId: MarkerId("currentLocation"),
@@ -166,6 +166,7 @@ class _MyAppState extends State<MapSample> {
       );
       markers.add(currentLocationMarker!);
     }
+
     } catch (e) {
       print("Error getting location: $e");
     }
@@ -177,20 +178,24 @@ class _MyAppState extends State<MapSample> {
 
     markers.clear(); // Clear existing markers
 
-    for (var location in locations) {
-      double latitude = location['latitude'];
-      double longitude = location['longitude'];
+    if (locations.isNotEmpty) {
+      for (var location in locations) {
+        double latitude = location['latitude'];
+        double longitude = location['longitude'];
 
-      Marker marker = Marker(
-        markerId: MarkerId("$latitude-$longitude"),
-        position: LatLng(latitude, longitude),
-        // You can customize the marker icon here if needed
-        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueViolet),
-        infoWindow: InfoWindow(title: location['name']),
-      );
+        Marker marker = Marker(
+          markerId: MarkerId("$latitude-$longitude"),
+          position: LatLng(latitude, longitude),
+          // You can customize the marker icon here if needed
+          icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueViolet),
+          infoWindow: InfoWindow(title: location['name']),
+        );
 
-      markers.add(marker);
+        markers.add(marker);
+      }
     }
+
+
 
     if (currentLocation != null) {
       currentLocationMarker = Marker(
@@ -233,7 +238,7 @@ class _MyAppState extends State<MapSample> {
     super.initState();
     getCurrentLocation();
 
-    Timer.periodic(Duration(seconds: 10), (Timer timer) {
+    Timer.periodic(Duration(seconds: 3), (Timer timer) {
       getCurrentLocation();
       fetchDataFromApi();
     });
@@ -363,6 +368,4 @@ class ApiService {
     }
   }
 }
-
-
 
