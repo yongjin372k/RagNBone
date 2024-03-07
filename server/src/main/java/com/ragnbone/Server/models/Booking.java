@@ -1,13 +1,16 @@
 package com.ragnbone.Server.models;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 @Table(name="Booking")
 @Data
 public class Booking {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "bookingID")
@@ -27,13 +30,19 @@ public class Booking {
 
     @Column(name = "bookingDate")
     private LocalDateTime bookingDate;
+
+    @Column(name = "paymentType")
+    private boolean paymentType;
+
+    @Column(name = "pickupTime")
+    private LocalTime pickupTime;
     
     public Booking() {
 
     }
 
     public Booking(
-        int bookingID, int userID, String address, String postalCode, boolean adhoc, LocalDateTime bookingDate
+        int bookingID, int userID, String address, String postalCode, boolean adhoc, LocalDateTime bookingDate, boolean paymentType, LocalTime pickupTime
     ) {
         this.bookingID = bookingID;
         this.userID = userID;
@@ -41,6 +50,8 @@ public class Booking {
         this.postalCode = postalCode;
         this.adhoc = adhoc;
         this.bookingDate = bookingDate;
+        this.paymentType = paymentType;
+        this.pickupTime = pickupTime;
     }
 
 
@@ -96,6 +107,22 @@ public class Booking {
         this.bookingDate = bookingDate;
     }
 
+    public boolean getPaymentType() {
+        return this.paymentType;
+    }
+
+    public void setPaymentType(boolean paymentType) {
+        this.paymentType = paymentType;
+    }
+
+    public LocalTime getPickupTime() {
+        return pickupTime;
+    }
+
+    public void setPickupTime(LocalTime pickupTime) {
+        this.pickupTime = pickupTime;
+    }
+
     @Override
     public String toString() {
       return "Booking{"
@@ -115,6 +142,12 @@ public class Booking {
           + '\''
           + ", bookingDate='"
           + bookingDate
+          + '\''
+          + ", paymentType='"
+          + paymentType
+          + '\''
+          + ", pickupTime='"
+          + pickupTime
           + '\''
           + '}';
     }

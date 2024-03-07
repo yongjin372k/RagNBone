@@ -7,6 +7,7 @@ import com.ragnbone.Server.models.Booking;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,26 @@ public class BookingService {
             throw new BookingNotFoundException("Booking not found");
         }
         return booking;
+    }
+
+    public void updateBooking(int bookingID, Booking booking) {
+        Optional<Booking> optionalBooking = bookingRepository.findById(bookingID);
+
+        if (optionalBooking.isPresent()) {
+            Booking existingBoking = optionalBooking.get();
+
+            existingBoking.setAddress(booking.getAddress());
+            existingBoking.setPostalCode(booking.getPostalCode());
+            existingBoking.setAdhoc(booking.getAdhoc());
+            existingBoking.setBookingDate(LocalDateTime.now((ZoneId.of("Asia/Singapore"))));
+            existingBoking.setPaymentType(booking.getPaymentType());
+            existingBoking.setPickupTime(booking.getPickupTime());
+
+            bookingRepository.save(existingBoking);
+        } else {
+            throw new RuntimeException("Booking not found with ID: " + bookingID);
+        }
+
     }
 
     public void deleteBooking(int bookingID) throws IOException, BookingNotFoundException{

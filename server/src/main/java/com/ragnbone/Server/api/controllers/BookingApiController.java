@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.ragnbone.Server.models.Booking;
-
+import com.ragnbone.Server.models.Location;
 import com.ragnbone.Server.api.repository.BookingRepository;
 import com.ragnbone.Server.api.service.BookingService;
 import com.ragnbone.Server.exceptions.BookingNotFoundException;
@@ -51,6 +51,12 @@ public class BookingApiController {
         }
     }
     
+    @PostMapping("/update/{bookingID}")
+    public ResponseEntity<Void> updateLocation(@PathVariable int bookingID, @RequestBody Booking booking) {
+        bookingService.updateBooking(bookingID, booking);
+        return ResponseEntity.ok().build();
+    }
+
     @DeleteMapping("/delete/{bookingID}")
     public ResponseEntity<String> deleteBooking(@PathVariable("bookingID") int bookingID) throws IOException, BookingNotFoundException{
             bookingService.deleteBooking(bookingID);
