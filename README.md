@@ -21,3 +21,7 @@ spring.servlet.multipart.max-file-size=10MB
 spring.servlet.multipart.max-request-size=10MB
 spring.devtools.restart.enabled=false
 ```
+
+
+Use your own Google Routes API
+can be found here: https://developers.google.com/maps/documentation/routes 
