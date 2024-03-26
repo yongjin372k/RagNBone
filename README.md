@@ -1,7 +1,9 @@
 # RagNBone
 A sustainable recycling collection app based on the rag-and-bone industry
 
+Project by Jesliza and Crew for Google x dEEEvelopers Tech4Tomorrow Hackathon
 
+![alt text](https://github.com/yongjin372k/RagNBone/blob/main/tech4tomorrow.jpg?raw=true)
 
 ### **Application Properties**
 ##### Copy pasta this into your **application.properties** under resource
